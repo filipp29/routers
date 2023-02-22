@@ -1,0 +1,216 @@
+    
+<div class="mainBox">
+    <div id="searchForm" class="searchForm_r">
+        <div class="pageTitle">
+            Поиск по базе роутеров:
+        </div>
+        <div class="pageBlock">
+            <div id="paramsBox" class="paramsBox">
+                <div id="nameBlock" class="paramBlock">
+                    <div class="label_r">
+                        Ф.И.О. Абонента:
+                    </div>
+                    <input type="text" name="name" id="nameInput" class="input_r">
+                </div>
+                <div id="addressBlock" class="paramBlock">
+                    <div class="label_r">
+                        Адрес:
+                    </div>
+                    <input type="text" name="address" id="addressInput" class="input_r">
+                </div>
+                <div id="macBlock" class="paramBlock">
+                    <div class="label_r">
+                        MAC-адрес:
+                    </div>
+                    <input type="text" name="mac" id="macInput" class="input_r">
+                </div>
+                <div id="dnumBlock" class="paramBlock">
+                    <div class="label_r">
+                        Договор:
+                    </div>
+                    <input type="text" name="dnum" id="dnumInput" class="input_r">
+                </div>
+                <div id="inChargeBlock" class="paramBlock">
+                    <div class="label_r">
+                        Ответственный:
+                    </div>
+                    <input type="text" name="inCharge" id="inChargeInput" class="input_r">
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="pageSubTitle">
+            Фильтр по городам и статусам:
+        </div>
+            <div id="statusCityBox" class="statusCityBox">
+                <div>
+                    <div id="cityBox" class="cityBox_r">
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="lsk" id="lskCheck" class="checkbox">
+                            <label for="lskCheck" class="label" style="width: 75%;">
+                                Лисаковск
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="lskCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="kst" id="kstCheck" class="checkbox">
+                            <label for="kstCheck" class="label" style="width: 75%;">
+                                Костанай
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="kstCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="kchr" id="kchrCheck" class="checkbox">
+                            <label for="kchrCheck" class="label" style="width: 75%;">
+                                Качар
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="kchrCount" class="label"></span>
+                        </div>
+                    </div>
+                    <div id="selectAllCity" class="selectAll" onclick="selectAll('city')">
+                        Выбрать все/Отменить все
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="statusBox" class="statusBox_r">
+                        
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="installed" id="installedCheck" class="checkbox">
+                            <label for="installedCheck" class="label" style="width: 75%;">
+                                Установлен
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="installedCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="inTaking" id="inTakingCheck" class="checkbox">
+                            <label for="inTakingCheck" class="label" style="width: 75%;">
+                                На изъятии
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="inTakingCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="atServEng" id="atServEngCheck" class="checkbox">
+                            <label for="atServEngCheck" class="label" style="width: 75%;">
+                                У инженера
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="atServEngCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="toStore" id="toStoreCheck" class="checkbox">
+                            <label for="toStoreCheck" class="label" style="width: 75%;">
+                                Передача на склад
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="toStoreCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="store" id="storeCheck" class="checkbox">
+                            <label for="storeCheck" class="label" style="width: 75%;">
+                                Хранение
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="storeCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="testing" id="testingCheck" class="checkbox">
+                            <label for="testingCheck" class="label" style="width: 75%;">
+                                Тестирование
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="testingCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="writeOff" id="writeOffCheck" class="checkbox">
+                            <label for="writeOffCheck" class="label" style="width: 75%;">
+                                Списан
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="writeOffCount" class="label"></span>
+                        </div>
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="lost" id="lostCheck" class="checkbox">
+                            <label for="lostCheck" class="label" style="width: 75%;">
+                                Утерян
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="lostCount" class="label"></span>
+                        </div>  
+                        <div class="checkBlock_r hghInvert">
+                            <input type="checkbox" name="lost" id="deleteCheck" class="checkbox">
+                            <label for="deleteCheck" class="label" style="width: 75%;">
+                                На удаление
+                            </label>
+                            <span style=" opacity: 0.7; color: #333333; width: 50px; text-align: right;" id="deleteCount" class="label"></span>
+                        </div>
+                    </div>
+                    <div id="selectAllStates" class="selectAll" onclick="selectAll('states')">
+                        Выбрать все/Отменить все
+                    </div>
+                </div>
+            </div>
+
+        
+            <div style="width: 100%; text-align: center; padding-bottom: 20px;">
+                <button onclick="confirmForm('resetRouterSearch()')" style="width: 150px; height: 40px; margin-top: 0px; margin-right: 50px;">
+                    Сброс
+                </button>
+                <button onclick="findButtonClick()" style="width: 150px; height: 40px; margin-top: 0px; margin-left: 50px;">
+                    Поиск
+                </button>
+            </div>
+            <!--
+            <div id="findButtonBox" class="findButtonBox">
+                <div id="findButton" class="findButton" onclick="findButtonClick()">
+                    Поиск
+                </div>
+            </div>
+            -->
+            
+        </div>
+        <div id="tableBox" class="tableBox">
+            <table id="table" class="table">
+                <tbody class="thead">
+                    <tr class="tr">
+                        <th class="th1" style="min-width: 150px;">
+                            MAC-адрес
+                        </th>
+                        <th class="th2" style="min-width: 200px;">
+                            Статус
+                        </th>
+                        <th class="th3">
+                            Адрес абонента
+                        </th>
+                        <th class="th4">
+                            Номер договора
+                        </th>
+                        <th class="th5">
+                            Ф.И.О. абонента
+                        </th>
+                        <th class="th6">
+                            Ответственный/Склад
+                        </th>
+                    </tr>
+                </tbody>
+                <tbody id="tbody" class="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+<div id="routerFormBlock" class="routerFormBlock hidden">
+    
+</div>
+
+        
+            <div id="messageBox" class="messageBox hidden">
+                <div id="messageLoading" class="loadnig hidden">
+                    Загрузка
+                </div>
+                <div id="message" class="message hidden">;
+                    <div id="messageText" class="text">
+
+                    </div>
+                    <div id="messageButton" class="button" onclick="messageButtonClick()">
+                        OK
+                    </div>
+                </div>
+            </div>

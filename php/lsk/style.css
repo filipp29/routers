@@ -1,0 +1,80 @@
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.block{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.first{
+    display: flex;
+    width: 450px;
+    padding: 10px;
+}
+
+.second{
+    width: 1400px;
+    flex-direction: column;
+}
+
+.cardBox{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.cardBlock{
+    display: flex;
+    border: 1px black solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+.key, .value{
+    display: flex;
+    padding: 5px 0px;
+}
+
+.key{
+    width: 140px;
+}
+
+
+.third{
+    width: 1400px;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.authBlock{
+    width: 800px;
+    min-height: 200px;
+}
+
+.supBlock{
+    flex-grow: 12;
+    min-height: 400px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+table *{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+
+
+
+
+

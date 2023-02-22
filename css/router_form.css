@@ -1,0 +1,364 @@
+ *{
+    box-sizing:  border-box;
+    -moz-box-sizing:  border-box;
+    -webkit-box-sizing:  border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Arial";
+    font-size: 16px;
+    position: relative;
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.routerFormBox{
+    width: 100%;
+    position: relative;
+    border: 2px #2F528F solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+
+.routerFormMenu{
+    width: 100%;
+    height: 50px; 
+    display: flex;
+    justify-content: space-around;
+    align-items:  flex-end;
+}
+
+
+.routerFormMenu .elem{
+    min-width: 180px;
+    padding: 0px 20px;
+    border: 2px #2F528F solid;
+    border-radius: 10px 20px 0px 0px;
+    background-color: #A1B8E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.routerFormMenu .elem:hover{
+    outline: 2px #2F528F solid;
+}
+
+.routerFormMenu .elem:active{
+    transform:  scale(0.96);
+    transform-origin: center bottom;
+}
+
+.routerFormMenu .selected{
+    background-color: #4472C4;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.routerForm{
+    width: 100%;
+    min-height:  600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.routerForm.hidden{
+    display: none;
+}
+
+
+
+.routerForm>.header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.routerForm.one>.data{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.routerForm.one>.data>.key{
+    height: 100%;
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.routerForm.one>.data>.value{
+    min-height: 40px;
+    width: 400px;
+    border: 1px black solid;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.routerForm.two>.data{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px #2F528F solid;
+    border-radius: 20px;
+    background-color: #4472C4;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.routerForm.two>.data>.supportHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.routerForm.two>.data>.supportText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.routerForm.two>.data>.supportResolution{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.routerForm.two>.data>.supportFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.routerForm.two>.data>.supportFooter>.elem{
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+
+.routerForm.three>.data{
+    width: 100%;
+    border: 2px #2F528F solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 15px;
+    background-color: #4472C4;
+    margin-bottom: 20px;
+}
+
+.routerForm.three>.data>.date{
+    color: #ffffff;
+    height: 30px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.routerForm.three>.data>.ticket{
+    width: 100%;
+    border: 2px #2F528F solid;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 5px 5px 5px;
+}
+
+.routerForm.three>.data>.ticket>.system{
+    width: 100%;
+    background-color: #B4C7E7;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.routerForm.three>.data>.ticket>.comment{
+    width: 100%;
+    border: 1px black solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.routerForm.three>.data>.ticket>.comment>.author{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 10px;
+    font-weight:  600;
+}
+
+.routerForm.three>.data>.ticket>.comment>.text{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: right;
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.routerForm.four>.data{
+    width: 100%;
+    border: 1px black solid;
+    padding: 5px;
+    margin: 10px 20px;
+}
+
+.routerForm.four>.data>.author{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 10px;
+    font-weight:   600;
+}
+
+.routerForm.four>.data>.text{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.routerForm.five>.data{
+    
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.routerFormFooter{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.footerButton{
+    min-width: 180px;
+    padding: 0px 20px;
+    border: 2px #2F528F solid;
+    border-radius: 15px;
+    background-color: #A1B8E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.footerButton:hover{
+    outline: 2px #4472C4 solid;
+}
+
+.footerButton:active{
+    transform:  scale(0.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

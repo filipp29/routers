@@ -1,0 +1,26 @@
+                <tr>
+                    <td>
+                        <?=date("d.m.Y", $date)?>
+                    </td>
+                    <td>
+                        <?=(int)$installed?>
+                    </td>
+                    <td>
+                        <?=(int)$inTaking?>
+                    </td>
+                    <td>
+                        <?=(int)$atServEng?>
+                    </td>
+                    <td>
+                        <?=(int)$toStore?>
+                    </td>
+                    <td>
+                        <?=(int)$store?>
+                    </td>
+                    <td>
+                        <?=(int)$wrteOff?>
+                    </td>
+                    <td>
+                        <?=(int)$lost?>
+                    </td>
+                </tr>    

@@ -1,0 +1,180 @@
+        <div class="mainBox">
+            <div id="tSearchForm" class="tSearchForm">
+                <div class="pageTitle">
+                    Поиск по тикетам:
+                </div>
+                
+                    <div class="cityList">
+                        
+                            <div id="header" class="header">
+                                Выбор города:
+                            </div>
+                            <div id="cityBox" class="cityBox_r" style="height: 240px;">
+                                
+                                <div class="checkBlock_r hghInvert">
+                                    <input type="checkbox" name="lsk" id="lskCheck" class="checkbox">
+                                    <label for="lskCheck" class="label">
+                                        Лисаковск
+                                    </label>
+                                </div> 
+                                <div class="checkBlock_r hghInvert">
+                                    <input type="checkbox" name="kst" id="kstCheck" class="checkbox">
+                                    <label for="kstCheck" class="label">
+                                        Костанай
+                                    </label>
+                                </div>
+                                <div class="checkBlock_r hghInvert">
+                                    <input type="checkbox" name="kchr" id="kchrCheck" class="checkbox">
+                                    <label for="kchrCheck" class="label">
+                                        Качар
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="selectAllCity" class="selectAll" onclick="selectAll('city')">
+                                Выбрать все/Отменить все
+                            </div>
+                    </div>
+                <div class="cityList">
+                    <div id="header" class="header">
+                        Входные параметры:
+                    </div>
+                    <div class="tParamBox">
+                        
+                        <div class="dayNegBox">
+                            <div id="dayNegFromBlock" class="paramBlock">
+                                <div class="label_r">
+                                    Дней "в минусе" от:
+                                </div>
+                                <input type="number" min="0" name="dayNegFrom" id="dayNegFromInput" class="input_r">
+                            </div>
+                            <div id="dayNegToBlock" class="paramBlock">
+                                <div class="label_r">
+                                    Дней "в минусе" до:
+                                </div>
+                                <input type="number" min="0" name="dayNegTo" id="dayNegToInput" class="input_r">
+                            </div>
+                        </div>    
+                        <div id="nameBlock" class="paramBlock">
+                            <div class="label_r">
+                                Ф.И.О. Абонента:
+                            </div>
+                            <input type="text" name="name" id="nameInput" class="input_r">
+                        </div>
+                        <div id="addressBlock" class="paramBlock">
+                            <div class="label_r">
+                                Адрес:
+                            </div>
+                            <input type="text" name="address" id="addressInput" class="input_r">
+                        </div>
+                        <div id="dnumBlock" class="paramBlock">
+                            <div class="label_r">
+                                Договор:
+                            </div>
+                            <input type="text" name="dnum" id="dnumInput" class="input_r">
+                        </div>
+                        
+                        <!---
+                        <div class="tButtonBox">
+                            <div id="tButtonCancel" class="tButton">
+                                Сброс
+                            </div>
+                            <div id="tButtonSearch" class="tButton" onclick="tSearchButtonClick()">
+                                Поиск
+                            </div>
+                        </div>
+                        --->
+                    </div>
+                </div>    
+                <div style="width: 100%; text-align: center; padding-bottom: 20px; margin-top: 40px">
+                    <button onclick="confirmForm('resetTicketSearch()')" style="width: 150px; height: 40px; margin-top: 0px; margin-right: 50px;">
+                        Сброс
+                    </button>
+                    <button onclick="tSearchButtonClick()" style="width: 150px; height: 40px; margin-top: 0px; margin-left: 50px;">
+                        Поиск
+                    </button>
+                </div>
+                <div class="tableButtonBox">
+
+                    <div id="tButtonInWork" class="tButton selected" onclick="tableButtonClick('inWork')">
+                        В обработке
+                    </div>
+                    <div id="tButtonInTaking" class="tButton" onclick="tableButtonClick('inTaking')">
+                        На изъятии
+                    </div>
+                </div>
+                
+            </div>    
+            
+           
+            
+            <div id="tableBox1" class="tableBox">
+                <table id="ticketTable1" class="table">
+                    <tbody class="thead">
+                        <tr class="tr">
+                            <th class="th1">
+                                MAC-адрес
+                            </th>
+                            <th class="th2">
+                                Адрес абонента
+                            </th>
+                            <th class="th3">
+                                Ф.И.О. абонента
+                            </th>
+                            <th class="th4">
+                                Последний комментарий
+                            </th>
+                            <th class="th5">
+                                Количество дней в минусе
+                            </th>
+                        </tr>
+                    </tbody>
+                    <tbody id="ticketTbody1" class="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="tableBox2" class="tableBox hidden">
+                <table id="ticketTable2" class="table">
+                    <tbody class="thead">
+                        <tr class="tr">
+                            <th class="th1">
+                                MAC-адрес
+                            </th>
+                            <th class="th2">
+                                Адрес абонента
+                            </th>
+                            <th class="th3">
+                                Ф.И.О. абонента
+                            </th>
+                            <th class="th4">
+                                Последний комментарий
+                            </th>
+                            <th class="th5">
+                                Количество дней в минусе
+                            </th>
+                            <th class="th6">
+                                Количество дней на изъятии
+                            </th>
+                        </tr>
+                    </tbody>
+                    <tbody id="ticketTbody2" class="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="messageBox" class="messageBox hidden">
+                <div id="messageLoading" class="loadnig hidden">
+                    Загрузка
+                </div>
+                <div id="message" class="message hidden">;
+                    <div id="messageText" class="text">
+
+                    </div>
+                    <div id="messageButton" class="button" onclick="messageButtonClick()">
+                        OK
+                    </div>
+                </div>
+            </div>
+        
+        </div>

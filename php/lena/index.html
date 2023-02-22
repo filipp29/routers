@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1251">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #infoForm{
+                display: flex;
+                width: 300px;
+                border: 1px solid black;
+                padding: 5px;
+                height: 60px;
+            }
+            .container{
+                display: flex;
+                width: 1200px;
+                border: 1px solid black;
+            }
+            
+            #mac, #dnum{
+                width: 50%;
+                min-height: 100px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <label>Номер Записи</label>
+        <br>
+        <input type="number" min="0" name="number" id="number">
+        <br>
+        <br>
+        <button onclick="getForm()">Получить</button>
+        <br>
+        <br>
+        <div id="infoForm"></div>
+        <br>
+        <div class="container">
+            <div id="mac">
+                
+            </div>
+            <div id="dnum">
+                
+            </div>
+        </div>
+        
+        <script>
+            
+            
+            
+            
+            
+            
+            
+
+/*---------------------------------------------------------------------------*/
+/* ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * 
+ * DECODER CLASS
+ * 
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+
+class Decoder{
+    
+    str = "";
+    ar = {};
+    count = 0;
+    
+    
+    constructor(){
+        this.count = 0;
+    }
+    
+    decode(
+            elem
+    ){
+        
+        let $reg = /(\{.*?\})/;
+        let $regV = /(..*?\{)/;
+        let $result = {};
+        let $flag = true;
+        while($flag){
+            
+            if (!this.str){
+                $flag = false;
+                break;
+            }
+            
+            this.count++;
+            if (this.count > 10000){
+                $flag = false;
+                break;
+            }
+            
+            if (this.str[0] === "{"){
+                if (this.str[1] === "/"){
+                    this.str = this.str.replace($reg,"");
+                    $flag = false;
+                    if ((typeof($result) == "object") && (Object.keys($result).length == 0)){
+                        $result = "";
+                    }
+                    break;
+                }
+                else{
+                    let $index = this.str.match($reg)[0];
+                    $index = $index.substr(1,$index.length-2);
+                    this.str = this.str.replace($reg,"");
+                    $result[$index] = this.decode($index);
+                }
+            }
+            else{
+                $result = this.str.match($regV)[0];
+                $result =$result.substr(0,$result.length -1);
+                this.str = this.str.replace($regV,"{");
+                
+            }
+            
+        }
+        return $result;
+        
+    }
+    
+    
+    strToArray(
+            $str
+    ){
+        this.str = $str;
+        return this.decode("");
+    }
+    
+    
+    encode(
+            $key,
+            $value
+    ){
+        $key = String($key);
+        $key = $key.trim();
+        
+        let $result = "{"+$key+"}";
+        if (typeof($value) == "object"){
+            for (let $k in $value){
+                $result += this.encode($k,$value[$k]);
+            }
+        }
+        else{
+            $value = String($value);
+            $value = $value.trim();
+            $result += $value;
+        }
+        $result += "{/"+$key+"}";
+        return $result;
+    }
+    
+    arrayToStr(
+            $ar
+    ){
+        
+        this.ar = $ar;
+        let $result = "";
+        for(let $k in $ar){
+            $result += this.encode($k,$ar[$k]);
+        }
+        return $result;
+    }
+    
+    
+    
+}
+
+
+/*---------------------------------------------------------------------------*/
+/* ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * 
+ * 
+ * ##########################################################################
+ * ##########################################################################
+ * ##########################################################################
+ * ---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            function show(type,value){
+                let xhr = new XMLHttpRequest();
+                xhr.onload = function(){
+                    if ((xhr.status == 200) || (xhr.status == 500)){
+                        document.getElementById(type).innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.open("GET","/_modules/routers/scripts/web/auth_all_check.php?type="+type+"&value="+value+"&showMac=on");
+                console.log("/_modules/routers/scripts/web/auth_all_check.php?type="+type+"&value="+value+"&showMac=on");
+                xhr.send();
+                document.getElementById(type).innerHTML = "<h1 style='width: 100%; text-align: center'>Загрузка<h1>";
+            }
+            
+            
+            
+            function getForm(){
+                let typeList = {
+                    "mac" : "Неверный Mac",
+                    "dnum" : "Неверный договор",
+                    "auth" : "Нет авторизации"
+                };
+                xhrGet =  new Promise(function(resolve){
+                    let number = Number(document.getElementById("number").value);
+                    let xhr = new XMLHttpRequest();
+                    xhr.open("GET","/_modules/routers/php/lena/getForm.php?number="+number);
+                    xhr.onload = function(){
+                        if (xhr.status == 200){
+                            let dec = new Decoder();
+                            let data = dec.strToArray(xhr.responseText);
+                            console.log(data);
+                            document.getElementById("infoForm").innerHTML = "MAC - "+data["mac"]+"<br>Договор - "+data["dnum"]+"<br>Тип - "+typeList[data["type"]]+"<br>";
+                            resolve(data);
+                        }
+                    };
+                    xhr.send();
+                });
+                xhrGet.then(data =>{
+                    show("mac",data["mac"]);
+                    show("dnum",data["dnum"]);
+                });
+            }
+        </script>
+    </body>
+</html>

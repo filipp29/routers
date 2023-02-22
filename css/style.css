@@ -1,0 +1,270 @@
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.searchForm, .searchForm *{
+    box-sizing:  border-box;
+    -moz-box-sizing:  border-box;
+    -webkit-box-sizing:  border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Arial";
+    font-size: 16px;
+    position: relative;
+}
+
+
+.searchForm{
+    border: 2px #2F528F solid;
+    border-bottom: 1px #2F528F solid;
+}
+
+.paramsBox{
+    display: flex;
+    flex-wrap:  wrap;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.paramBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    margin-bottom: 20px;
+}
+
+.paramBlock>label{
+    display: block;
+    
+}
+
+.paramBlock>input{
+    display: block;
+    border: 2px #2F528F solid;
+    width: 370px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+
+.statusCityBox{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content:  space-around;
+    align-items:  center;
+}
+
+.statusCityBox .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.selectAll{
+    display: flex;
+    align-items: center;
+    text-decoration:  black underline;
+    justify-content: flex-end;
+    text-align: right;
+    cursor:  pointer;
+    height: 40px;
+}
+
+.selectAll:hover{
+    color:  brown;
+}
+
+.selectAll:active{
+    transform: scale(0.93);
+}
+
+.statusBox, .cityBox{
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 340px;
+    border: 2px #2F528F solid;
+}
+
+.checkBlock{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.checkBlock .label{
+    margin-left: 20px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.findButtonBox{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding-left: 100px;
+}
+
+
+.findButton{
+    width: 140px;
+    height: 40px;
+    border: 2px #2F528F solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.findButton:hover{
+    outline: 1px #2F528F solid;
+}
+
+.findButton:active{
+    transform:  scale(0.93);
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.tableBox{
+    height: auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    border: 2px #2F528F solid;
+    border-top: 1px #2F528F solid;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table *{
+    border: 2px #2F528F solid;
+}
+
+.table .thead .tr {
+    height: 40px;
+}
+
+.table .thead .tr *{
+    border-color: #9CC2E5;
+    background-color: #5B9BD5;
+    color: #ffffff;
+}
+
+.table .thead .tr .th1{
+}
+
+
+.table .tbody .tr {
+    height: 35px;
+}
+
+.table .tbody .tr *{
+    border-color: #9CC2E5;
+    background-color: #DEEAF6;
+    color: #0C1C38;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.messageBox{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.6);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    
+}
+
+.message{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: calc(50vw - 200px);
+    top: calc(50vh - 150px);
+    border: 2px #0C1C38 solid;
+    border-radius: 20px;
+    background-color: #ffffff;
+    opacity: 1;
+    z-index: 1;
+}
+
+.message *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+}
+
+.message .text{
+    font-size: 25px;
+}
+
+.message .button{
+    width: 60px;
+    height: 30px;
+    border: 2px #2F528F solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.message .button:hover{
+    outline: 1px #2F528F solid;
+}
+
+.message .button:active{
+    transform:  scale(0.93);
+}
+
+
+.loadnig{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: calc(50vw - 200px);
+    top: calc(50vh - 150px);
+    border: 2px #0C1C38 solid;
+    border-radius: 20px;
+    background-color: #ffffff;
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+

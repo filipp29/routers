@@ -1,0 +1,54 @@
+<div class="mainBox">
+    <div class="pageTitle">
+        Отчет
+    </div>
+    <div class="reportParams">
+        <div style="margin-right: 40px;">
+            <div class="header">
+                Период
+            </div>
+            <div class="reportParamBlock">
+                <label for="dateStart">От: </label>
+                <input id="dateStart" type="date" name="dateStart">
+                <br>
+                <label for="dateEnd">До: </label>
+                <input id="dateEnd" type="date" name="dateEnd">
+            </div>
+        </div>
+        <div style="margin-right: 40px;">
+            <div class="header">
+                Тип отчета
+            </div>
+            <div class="reportParamBlock">
+                <select id="reportType">
+                    <option value="status">Статус</option>
+                    <option value="servEng">СИ</option>
+                </select>
+
+            </div>
+        </div>    
+        
+        <div style="margin-right: 40px;">
+            <div class="header">
+                Город
+            </div>
+            <div class="reportParamBlock">
+                <select id="city">
+                    <option value="lsk">Лисаковск</option>
+                    <option value="kst">Костанай</option>
+                    <option value="kchr">Качар</option>
+                </select>
+
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <button onclick="reportButtonClick()" style="width: 120px; height: 30px; margin-top: 0px;">
+                Поиск
+            </button>
+        </div>    
+    </div>
+    
+    <div id="reportData" class="reportData">
+        
+    </div>
+</div>

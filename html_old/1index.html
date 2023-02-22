@@ -1,0 +1,182 @@
+    
+<div class="mainBox">
+    <div id="searchForm" class="searchForm">
+            <div id="paramsBox" class="paramsBox">
+                <div id="nameBlock" class="paramBlock">
+                    <div class="label">
+                        Ф.И.О. Абонента:
+                    </div>
+                    <input type="text" name="name" id="nameInput" class="input">
+                </div>
+                <div id="addressBlock" class="paramBlock">
+                    <div class="label">
+                        Адрес:
+                    </div>
+                    <input type="text" name="address" id="addressInput" class="input">
+                </div>
+                <div id="macBlock" class="paramBlock">
+                    <div class="label">
+                        MAC-адрес:
+                    </div>
+                    <input type="text" name="mac" id="macInput" class="input">
+                </div>
+                <div id="dnumBlock" class="paramBlock">
+                    <div class="label">
+                        Договор:
+                    </div>
+                    <input type="text" name="dnum" id="dnumInput" class="input">
+                </div>
+                <div id="inChargeBlock" class="paramBlock">
+                    <div class="label">
+                        Ответственный:
+                    </div>
+                    <input type="text" name="inCharge" id="inChargeInput" class="input">
+                </div>
+                
+                
+            </div>
+            <div id="statusCityBox" class="statusCityBox">
+                <div class="container">
+                    <div id="statusBox" class="statusBox">
+                        
+                        <div class="checkBlock">
+                            <input type="checkbox" name="installed" id="installedCheck" class="checkbox">
+                            <label for="installedCheck" class="label">
+                                Установлен
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="inTaking" id="inTakingCheck" class="checkbox">
+                            <label for="inTakingCheck" class="label">
+                                На изъятии
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="atServEng" id="atServEngCheck" class="checkbox">
+                            <label for="atServEngCheck" class="label">
+                                У инженера
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="toStore" id="toStoreCheck" class="checkbox">
+                            <label for="toStoreCheck" class="label">
+                                Передача на склад
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="store" id="storeCheck" class="checkbox">
+                            <label for="storeCheck" class="label">
+                                Хранение
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="testing" id="testingCheck" class="checkbox">
+                            <label for="testingCheck" class="label">
+                                Тестирование
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="writeOff" id="writeOffCheck" class="checkbox">
+                            <label for="writeOffCheck" class="label">
+                                Списан
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="lost" id="lostCheck" class="checkbox">
+                            <label for="lostCheck" class="label">
+                                Утерян
+                            </label>
+                        </div>              
+                    </div>
+                    <div id="selectAllStates" class="selectAll" onclick="selectAll('states')">
+                        Выбрать все/Отменить все
+                    </div>
+                </div>
+                <div>
+                    <div id="cityBox" class="cityBox">
+                        <div class="checkBlock">
+                            <input type="checkbox" name="lsk" id="lskCheck" class="checkbox">
+                            <label for="lskCheck" class="label">
+                                Лисаковск
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="kst" id="kstCheck" class="checkbox">
+                            <label for="kstCheck" class="label">
+                                Костанай
+                            </label>
+                        </div>
+                        <div class="checkBlock">
+                            <input type="checkbox" name="kchr" id="kchrCheck" class="checkbox">
+                            <label for="kchrCheck" class="label">
+                                Качар
+                            </label>
+                        </div>
+                    </div>
+                    <div id="selectAllCity" class="selectAll" onclick="selectAll('city')">
+                        Выбрать все/Отменить все
+                    </div>
+                </div>
+            </div>
+            
+            <div id="findButtonBox" class="findButtonBox">
+                <div id="findButton" class="findButton" onclick="findButtonClick()">
+                    Поиск
+                </div>
+            </div>
+            
+        </div>
+        <div id="tableBox" class="tableBox">
+            <table id="table" class="table">
+                <tbody class="thead">
+                    <tr class="tr">
+                        <th class="th1">
+                            MAC-адрес
+                        </th>
+                        <th class="th2">
+                            Статус
+                        </th>
+                        <th class="th3">
+                            Адрес абонента
+                        </th>
+                        <th class="th4">
+                            Номер договора
+                        </th>
+                        <th class="th5">
+                            Ф.И.О. абонента
+                        </th>
+                        <th class="th6">
+                            Ответственный
+                        </th>
+                    </tr>
+                </tbody>
+                <tbody id="tbody" class="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+
+<div id="routerFormBlock" class="routerFormBlock hidden">
+    
+</div>
+
+        
+            <div id="messageBox" class="messageBox hidden">
+                <div id="messageLoading" class="loadnig hidden">
+                    Загрузка
+                </div>
+                <div id="message" class="message hidden">;
+                    <div id="messageText" class="text">
+
+                    </div>
+                    <div id="messageButton" class="button" onclick="messageButtonClick()">
+                        OK
+                    </div>
+                </div>
+            </div>
+                
+ </div>      
+        
+        
